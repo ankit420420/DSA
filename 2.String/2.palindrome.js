@@ -4,7 +4,10 @@ const str = "Step on no pets"
 const normalizedStr1 = str.toLowerCase()
 const revInBuilt = [...normalizedStr1].reverse().join("")
 
-console.log(normalizedStr1 === revInBuilt ? "It is a palindrome" : "It is not a palindrome")
+console.log(
+  "Inbuilt:",
+  normalizedStr1 === revInBuilt ? "It is a palindrome" : "It is not a palindrome"
+)
 
 //==== Recursion ====
 let left1 = 0
@@ -22,7 +25,7 @@ function reverseRecursion(str, left, right) {
 
 const isPalindrome1 = reverseRecursion(str, left1, right1)
 
-console.log(isPalindrome1 ? "It is a palindrome" : "It is not a palindrome")
+console.log("Recursion:", isPalindrome1 ? "It is a palindrome" : "It is not a palindrome")
 
 //==== Manual Approach ====
 // a. Using 2 pointer (Best Way)
@@ -39,7 +42,7 @@ while (left2 < right2) {
   right2--
 }
 
-console.log(isPalindrome2 ? "It is a palindrome" : "It is not a palindrome")
+console.log("Manual:", isPalindrome2 ? "It is a palindrome" : "It is not a palindrome")
 
 // b. Using Pure Manual Approach (Second Best Way)
 let left3 = 0
@@ -55,7 +58,7 @@ while (left3 < right3) {
   right3--
 }
 
-console.log(isPalindrome3 ? "It is a palindrome" : "It is not a palindrome")
+console.log("Pure Manual:", isPalindrome3 ? "It is a palindrome" : "It is not a palindrome")
 
 //==== Helper functions ====
 // Convert uppercase character to lowercase

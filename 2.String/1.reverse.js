@@ -193,7 +193,7 @@ for (let i = 0; i < arr4.length; i++) {
 console.log("revStrManual8:", revStrManual8)
 
 //==== Full Unicode grapheme String ====
-const str1 = "A👨‍👩‍👧‍👦B"
+const str1 = "Lovely👨‍👩‍👧‍👦day"
 
 const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" })
 const revFullGrapheme = [...segmenter.segment(str1)]
@@ -201,7 +201,7 @@ const revFullGrapheme = [...segmenter.segment(str1)]
   .reverse()
   .join("")
 
-console.log("Grapheme- original string:", str1)
+// console.log("Grapheme- original string:", str1)
 console.log("Grapheme- revFullGrapheme:", revFullGrapheme)
 
 /*

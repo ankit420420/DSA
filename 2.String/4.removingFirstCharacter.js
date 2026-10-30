@@ -32,30 +32,30 @@ for (let i = 1; i < str.length; i++) {
   result7.push(str[i])
 }
 
-console.log("user defined;", result7.join(""))
+console.log("Manual:", result7.join(""))
 
 // For emoji  handling
-const str1 = "👨👩👧👦y"
+const str1 = "👨👩👧👦Ankit is a boy"
 
 // a. Using charCodeAt
 const firstCodePoint = str1.codePointAt(0)
 const index = firstCodePoint > 0xffff ? 2 : 1
 const result8 = str1.slice(index)
 
-console.log("codePointAt:", result8)
+console.log("Emoji- codePointAt:", result8)
 
 // b. Using replace
 const result9 = str1.replace(/^[\s\S]/u, "")
-console.log("replaceUniCode:", result9)
+console.log("Emoji- replaceUniCode:", result9)
 
 //==== Full Unicode grapheme String ====
-const str2 = "👨‍👩‍👧‍👦B"
+const str2 = "👨‍👩‍👧‍👦Ankit is a boy"
 
 const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" })
 const first = segmenter.segment(str2)[Symbol.iterator]().next().value
 const revFullGrapheme = first ? str2.slice(first.segment.length) : ""
 
-console.log("Grapheme- original string:", str2)
+// console.log("Grapheme- original string:", str2)
 console.log("Grapheme- revFullGrapheme:", revFullGrapheme)
 
 /*
@@ -84,5 +84,4 @@ Approach Comparison (Grapheme String)
 | **Rank** | **Approach**   | **Time Complexity**  | **Space Complexity** | **Production** |
 | -------- | -------------- | -------------------- | -------------------- | -------------- |
 | 1        | Intl.Segmenter | O(n)                 | O(n)                 | Excellent      |
-
 */

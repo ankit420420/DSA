@@ -4,7 +4,7 @@ const str = "A man, a plan, a canal: Panama"
 const cleanStr = clean(str)
 const revInBuilt = cleanStr.split("").reverse().join("")
 
-console.log(cleanStr === revInBuilt ? "It is a palindrome" : "It is not a palindrome")
+console.log("Inbuilt:", cleanStr === revInBuilt ? "It is a palindrome" : "It is not a palindrome")
 
 //==== Helper functions ====
 // Trim, convert string to lowercase and remove non-alphanumeric characters
@@ -34,7 +34,7 @@ function reverseRecursion(str, left, right) {
 
 const revRecurBool = reverseRecursion(str, left1, right1)
 
-console.log(revRecurBool ? "It is a palindrome" : "It is not a palindrome")
+console.log("Recursion:", revRecurBool ? "It is a palindrome" : "It is not a palindrome")
 
 //==== Manual Approach ====
 // a. Using 2 pointer (Best Way)
@@ -60,7 +60,7 @@ while (left2 < right2) {
   right2--
 }
 
-console.log(isIdentical1 ? "It is a palindrome" : "It is not a palindrome")
+console.log("Manual:", isIdentical1 ? "It is a palindrome" : "It is not a palindrome")
 
 // b. Using Pure Manual Approach (Second Best Way)
 let left3 = 0
@@ -85,7 +85,7 @@ while (left3 < right3) {
   right3--
 }
 
-console.log(isIdentical2 ? "It is a palindrome" : "It is not a palindrome")
+console.log("Pure Manual:", isIdentical2 ? "It is a palindrome" : "It is not a palindrome")
 
 //==== Helper functions ====
 // Check if element is either number or character
