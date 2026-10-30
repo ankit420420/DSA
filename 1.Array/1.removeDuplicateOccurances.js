@@ -106,23 +106,3 @@ Approach Comparison
 •	Not ideal for huge datasets
 •	Worst readability
 */
-
-// arr.length = n
-// result.length = m
-
-// Example:
-// For string: "abcd"
-
-// When recursion returns it starts unwinding the call stack:
-
-// Call 1:
-// reverse("d".slice(1))+str[0] calls "" + "d" => "d" copies 1 char
-
-// Call 2:
-// reverse("cd".slice(1))+str[0] calls "d" + "c"=> "dc" copies 2 chars
-
-// Call 3:
-// reverse("bcd".slice(1))+str[0] calls "dc" + "b"=> "dcb" copies 3 chars
-
-// Call 4:
-// reverse("abcd".slice(1))+str[0] calls "dcb" + "a"=> "dcba" copies 4 chars

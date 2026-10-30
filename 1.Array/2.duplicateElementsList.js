@@ -276,10 +276,3 @@ Approach Comparison
 •	Fine for small datasets
 •	Not ideal for production-scale data
 */
-// User Service restarts
-//      ↓
-// registry/DNS gets updated
-//      ↓
-// Order Service still uses "user-service"
-//      ↓
-// request reaches healthy instance
