@@ -48,6 +48,11 @@ console.log("Emoji- codePointAt:", result8)
 const result9 = str1.replace(/^[\s\S]/u, "")
 console.log("Emoji- replaceUniCode:", result9)
 
+/*Other way to remove first character
+str1.replace(/^./su, "")
+}
+*/
+
 //==== Full Unicode grapheme String ====
 const str2 = "👨‍👩‍👧‍👦Ankit is a boy"
 
@@ -73,15 +78,43 @@ Approach Comparison (Ordinary String)
 | 5        | substr                    | O(n)                 | O(n)                 | Deprecated, legacy API |
 
 Approach Comparison (Emoji String)
--------------------
-| **Rank** | **Approach** | **Time Complexity**  | **Space Complexity** | **Production** |
-| -------- | ------------ | -------------------- | -------------------- | -------------- |
-| 1        | codePointAt  | O(n)                 | O(1)                 | Excellent      |
-| 2        | replace      | O(n)                 | O(1)                 | Excellent      |
+----------------------------------
+| **Rank** | **Approach**              | **Time Complexity**  | **Space Complexity** | **Production** |
+| -------- | ------------------------- | -------------------- | -------------------- | -------------- |
+| 1        | codePointAt               | O(n)                 | O(1)                 | Excellent      |
+| 1        | replace                   | O(n)                 | O(1)                 | Excellent      |
+| 2        | spread + slice + join     | O(n)                 | O(n)                 | Excellent      |
+| 2        | Array.from + slice + join | O(n)                 | O(n)                 | Excellent      |
 
 Approach Comparison (Grapheme String)
 -------------------
 | **Rank** | **Approach**   | **Time Complexity**  | **Space Complexity** | **Production** |
 | -------- | -------------- | -------------------- | -------------------- | -------------- |
 | 1        | Intl.Segmenter | O(n)                 | O(n)                 | Excellent      |
+
+
+
+Approach Comparison (Emoji String)
+----------------------------------
+1. codePointAt
+•	Reads only the first Unicode code point.
+•	Determines whether that code point occupies one or two UTF-16 code units.
+•	Creates no intermediate arrays.
+•	Works correctly with individual Unicode code points, including emojis.
+•	Suitable for large strings
+
+2. replace
+•	This is almost as good as codePointAt Approach
+•	Advantages include its concis syntax, lack of intermediate arrays, and ability to handle leading newline characters
+•	The u flag ensures that the regex matches a complete Unicode code point
+•	Short, readable, clean
+
+3. spread + slice + join 
+•	This performs three operations:
+•	It creates two intermediate arrays, even though you only want to remove the first code point
+•	That's why I rank it below the first two approaches
+
+4. Array.from + slice + join 
+•	It behaves similarly to the spread approach
+•	Both iterate through Unicode code points, create an array, remove the first array element through slicing, and join the remainder.
 */
