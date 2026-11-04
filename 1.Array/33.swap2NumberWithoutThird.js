@@ -14,7 +14,7 @@ console.log("num1:", num1)
 console.log("num2:", num2)
 console.log()
 
-// Using Manual Approach
+//==== Using Manual Approach ====
 console.log("====Using Manual Aproach====")
 
 // a. Using add/substract
@@ -36,9 +36,6 @@ console.log("num3:", num3)
 console.log("num4:", num4)
 console.log()
 
-/*
-Others ways using - Manual Approach
-
 // b. Using multiply/divide
 console.log("====Using Multiply/Divide====")
 
@@ -57,7 +54,6 @@ console.log("Swapped Numbers")
 console.log("num5:", num5)
 console.log("num6:", num6)
 
-
 // c. Using XOR bitwise operator
 console.log("====Using  XOR bitwise operator====")
 
@@ -75,7 +71,6 @@ num7 = num7 ^ num8
 console.log("Swapped Numbers")
 console.log("num7:", num7)
 console.log("num8:", num8)
-*/
 
 /*
 ****************Read Me****************
@@ -103,6 +98,7 @@ Approach Comparison
 •	Supports large numbers beyond 32-bit range
 •	It fails when either value is zero
 •	Can also suffer from floating-point precision problem
+
 
 4. XOR bitwise operator - Manual Approach
 •	Suitable for 32-bit integer values in JavaScript

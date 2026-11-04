@@ -1,7 +1,7 @@
 const numArr = [1, 2, 4, 3, 7, 4, 5]
 const target = 5
 
-// Using Nested loops
+// Nested loops
 const usedSet1 = new Set()
 const result1 = []
 for (let i = 0; i <= numArr.length - 2; i++) {
@@ -19,7 +19,7 @@ for (let i = 0; i <= numArr.length - 2; i++) {
 }
 console.log(result1)
 
-// Using Set (Best Way)
+// Set (Best Way)
 const complementSet = new Set()
 const usedSet2 = new Set()
 const result2 = []
@@ -45,3 +45,20 @@ for (let num of numArr) {
 }
 
 console.log(result2)
+
+/*
+****************Read Me****************
+Approach Comparison
+-------------------
+| **Rank** | **Approach** | **Time Complexity**  | **Space Complexity** | **Production** |
+| -------- | ------------ | -------------------- | -------------------- | -------------- |
+| 1        | Set          | O(n)                 | O(n)                 | Excellent      |
+| 2        | Nested loops | O(n²)                | O(n)                 | Excellent      |
+
+1. Set 
+•	It stores up to 1 million values in complementSet → O(n) auxiliary space
+
+
+2. Nested loops 
+•	It stores no values in usedSet1 because no pairs are found → O(1) auxiliary space for that input.
+*/

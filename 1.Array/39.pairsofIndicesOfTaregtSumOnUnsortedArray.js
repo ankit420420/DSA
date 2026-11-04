@@ -1,7 +1,7 @@
 const numArr = [1, 2, 4, 3, 7, 4, 5]
 const target = 5
 
-// Using 2 Sets
+// 2 Sets
 const complementSet = new Set()
 const usedSet1 = new Set()
 const result1 = []
@@ -34,8 +34,8 @@ for (let i = 0; i < numArr.length; i++) {
 
 console.log(result1)
 
-// Using Map and Set (Best Way)
-const complementMap = new Map()
+// Map + Set (Best Way)
+const complementIndexMap = new Map()
 const usedSet2 = new Set()
 const result2 = []
 for (let i = 0; i < numArr.length; i++) {
@@ -45,8 +45,8 @@ for (let i = 0; i < numArr.length; i++) {
   // Checking if complement was already added to set. it tells that pair exists
   // Also chekcing if complement added to usedSet. It tells that the pair is already added to result array
   // It is done to avoid adding duplicate pairs
-  if (complementMap.has(complement) && !usedSet1.has(complement)) {
-    const j = complementMap.get(complement)
+  if (complementIndexMap.has(complement) && !usedSet1.has(complement)) {
+    const j = complementIndexMap.get(complement)
     const pair2 = [j, i]
 
     // adding pair to array to prepare response
@@ -59,9 +59,26 @@ for (let i = 0; i < numArr.length; i++) {
 
   // adding current number and index to Map to track that its pair exist when in subsequent iteration its complement is found
   // It is done to avoid adding dulicate pairs
-  if (!complementMap.has(num)) {
-    complementMap.set(num, i)
+  if (!complementIndexMap.has(num)) {
+    complementIndexMap.set(num, i)
   }
 }
 
 console.log(result1)
+
+/*
+****************Read Me****************
+Approach Comparison
+-------------------
+| **Rank** | **Approach** | **Time Complexity**  | **Space Complexity** | **Production** |
+| -------- | ------------ | -------------------- | -------------------- | -------------- |
+| 1        | Map + Set    | O(n)                 | O(n)                 | Excellent      |
+| 2        | 2 Sets       | O(n²)                | O(n)                 | Excellent      |
+
+1. Map + Set 
+•	It stores up to 1 million values in complementSet → O(n) auxiliary space
+
+
+2. 2 Sets 
+•	It stores no values in usedSet1 because no pairs are found → O(1) auxiliary space for that input.
+*/
