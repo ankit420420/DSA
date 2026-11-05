@@ -56,9 +56,9 @@ Approach Comparison
 | 2        | Nested loops | O(n²)                | O(n)                 | Excellent      |
 
 1. Set 
-•	It stores up to 1 million values in complementSet → O(n) auxiliary space
+•	It reduces the expected time complexity from O(n²) to O(n)
 
 
 2. Nested loops 
-•	It stores no values in usedSet1 because no pairs are found → O(1) auxiliary space for that input.
+•	Even if the complement doesn't exist, indexOf() may scan the entire array 
 */

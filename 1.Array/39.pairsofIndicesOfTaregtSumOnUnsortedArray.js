@@ -73,12 +73,13 @@ Approach Comparison
 | **Rank** | **Approach** | **Time Complexity**  | **Space Complexity** | **Production** |
 | -------- | ------------ | -------------------- | -------------------- | -------------- |
 | 1        | Map + Set    | O(n)                 | O(n)                 | Excellent      |
-| 2        | 2 Sets       | O(n²)                | O(n)                 | Excellent      |
+| 2        | 2 Sets       | O(n²)                | O(n)                 | Good           |
 
 1. Map + Set 
-•	It stores up to 1 million values in complementSet → O(n) auxiliary space
+•	It reduces the expected time complexity from O(n²) to O(n)
 
 
 2. 2 Sets 
-•	It stores no values in usedSet1 because no pairs are found → O(1) auxiliary space for that input.
+•	Even if the complement doesn't exist, indexOf() may scan the entire array
+•	This always retrieves the first occurrence of the complement. It may select the same index as i when the values are equal
 */

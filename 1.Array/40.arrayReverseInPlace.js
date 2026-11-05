@@ -1,6 +1,6 @@
 const numArr1 = [1, 2, 4, 3, 7, 4, 5]
 
-// Using reverse (Best Way)
+// reverse (Best Way)
 numArr1.reverse()
 console.log("reversedArray1:", numArr1)
 
@@ -38,6 +38,14 @@ Approach Comparison
 | **Rank** | **Approach** | **Time Complexity** | **Space Complexity** | **Production** |
 | -------- | ------------ | ------------------- | -------------------- | -------------- |
 | 1        | reverse      | O(n)                | O(1)                 | Excellent      |
-| 1        | 2 pointer    | O(n)                | O(1)                 | Excellent      |
+| 2        | 2 pointer    | O(n)                | O(1)                 | Excellent      |
 
+1. reverse 
+• Readability, maintainability, and potential JavaScript engine optimizations
+
+
+2. 2 pointer 
+• Concise and readable
+•	No explicitly declared temporary variable
+•	Suitable for modern JavaScript
 */

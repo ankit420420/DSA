@@ -39,5 +39,4 @@ Approach Comparison
 | **Rank** | **Approach** | **Time Complexity** | **Space Complexity** | **Production** |
 | -------- | ------------ | ------------------- | -------------------- | -------------- |
 | 1        | 2 pointer    | O(n)                | O(n)                 | Excellent      |
-
 */
